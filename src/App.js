@@ -1,6 +1,33 @@
+import styled, { createGlobalStyle } from "styled-components";
 import React from "react";
 import CardVideo from "./Componentes/CardVideo";
 import "./styles.css";
+
+const AlteraHeader = styled.header`
+
+background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 10%;
+
+`
+
+const AlteraMain = styled.main`
+min-height: 80%;
+  display: flex;
+
+
+`
+
+const AlteraNav = styled.nav`
+flex-basis: 200px;
+  border-right-style: solid;
+  border-right-width: thin;
+
+`
+
 
 export default function App() {
   const card1 = {
@@ -12,13 +39,13 @@ export default function App() {
   return (
     <div>
       <div className="tela-inteira">
-        <header>
+        <AlteraHeader>
           <h1>LabeTube</h1>
           <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+        </AlteraHeader>
 
-        <main>
-          <nav className="menu-vertical">
+        <AlteraMain>
+          <AlteraNav className="menu-vertical">
             <ul>
               <li className="botoes-meunu-vertical">Início</li>
               <li className="botoes-meunu-vertical">Em alta</li>
@@ -27,7 +54,7 @@ export default function App() {
               <li className="botoes-meunu-vertical">Originais</li>
               <li className="botoes-meunu-vertical">Histórico</li>
             </ul>
-          </nav>
+          </AlteraNav>
 
           <section className="painel-de-videos">
             <CardVideo
@@ -36,7 +63,7 @@ export default function App() {
               textoAlternativo={card1.textoAlternativo}
             />
           </section>
-        </main>
+        </AlteraMain>
 
         <footer>
           <h4>Oi! Eu moro no footer!</h4>
